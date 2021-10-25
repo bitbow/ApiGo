@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/06/14 23:16:34.000.388,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 21:51:33.000.623,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/26 12:41:15.000.936,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/04 19:40:53.000.792,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/04 20:12:39.000.429,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/04 21:06:41.000.941,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/04 21:09:30.000.071,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/05 22:24:46.000.387,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/08 17:42:20.000.554,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/19 22:44:23.000.494,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/07/29 20:14:57.000.569,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 22:36:12.000.681,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 22:37:49.000.657,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/08/25 22:41:08.000.874,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/24 14:29:54.000.899,=D:\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/24 14:29:58.000.027,=D:\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2021/10/24 14:53:48.000.720,D:\Embarcadero\Studio\Projects\Unit1.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit1.pas</Transaction>
+    <Transaction>2021/10/24 14:53:50.000.826,D:\Embarcadero\Studio\Projects\Unit2.dfm=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit2.dfm</Transaction>
+    <Transaction>2021/10/24 14:53:50.000.826,D:\Embarcadero\Studio\Projects\Unit2.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit2.pas</Transaction>
+    <Transaction>2021/10/24 14:53:52.000.847,D:\Embarcadero\Studio\Projects\Project2.dproj=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Project2.dproj</Transaction>
+    <Transaction>2021/10/24 15:17:29.000.758,=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\uDMConexion.pas</Transaction>
+    <Transaction>2021/10/24 17:46:24.000.175,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\uDMConexion.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UdmMain.pas</Transaction>
+    <Transaction>2021/10/24 17:46:24.000.175,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\uDMConexion.dfm=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UdmMain.dfm</Transaction>
+    <Transaction>2021/10/24 17:46:44.000.324,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit2.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UwmMain.pas</Transaction>
+    <Transaction>2021/10/24 17:46:44.000.324,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit2.dfm=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UwmMain.dfm</Transaction>
+    <Transaction>2021/10/24 17:47:20.000.040,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit1.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UMVCcontroller.pas</Transaction>
+    <Transaction>2021/10/24 17:48:18.000.989,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Project2.dproj=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\ApiGo.dproj</Transaction>
+    <Transaction>2021/10/24 18:40:19.869,=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UGlobal.pas</Transaction>
+    <Transaction>2021/10/24 18:45:53.885,=C:\Proyectos\BearSoft\WebD10\Utils\Utilsx.pas</Transaction>
+    <Transaction>2021/10/24 21:12:01.544,C:\Proyectos\BearSoft\WebD10\Utils\Utilsx.pas=</Transaction>
+    <Transaction>2021/10/24 21:12:12.649,=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit1.pas</Transaction>
+    <Transaction>2021/10/24 21:12:38.538,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UUtils.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Unit1.pas</Transaction>
+    <Transaction>2021/10/24 21:12:51.557,C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\Lib\UUtils.pas=C:\Proyectos\BearSoft\WebD10\MVCDinamicApi\UUtils.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="DemoDevice"/>
+	</ActiveMobileDevice>
+</BorlandProject>
