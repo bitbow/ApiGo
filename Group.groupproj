@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{094E1EEA-8729-4125-A068-57B1296432CB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ApiGo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Sample\Sample1\ApiGoSample1.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ApiGo">
+        <MSBuild Projects="ApiGo.dproj"/>
+    </Target>
+    <Target Name="ApiGo:Clean">
+        <MSBuild Projects="ApiGo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ApiGo:Make">
+        <MSBuild Projects="ApiGo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ApiGoSample1">
+        <MSBuild Projects="Sample\Sample1\ApiGoSample1.dproj"/>
+    </Target>
+    <Target Name="ApiGoSample1:Clean">
+        <MSBuild Projects="Sample\Sample1\ApiGoSample1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ApiGoSample1:Make">
+        <MSBuild Projects="Sample\Sample1\ApiGoSample1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ApiGo;ApiGoSample1"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ApiGo:Clean;ApiGoSample1:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ApiGo:Make;ApiGoSample1:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -2,7 +2,12 @@ object wmMain: TwmMain
   OldCreateOrder = False
   OnCreate = WebModuleCreate
   OnDestroy = WebModuleDestroy
-  Actions = <>
-  Height = 320
-  Width = 398
+  Actions = <
+    item
+      Default = True
+      Name = 'DefaultHandler'
+      PathInfo = '/'
+    end>
+  Height = 230
+  Width = 415
 end

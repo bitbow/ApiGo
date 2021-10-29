@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "f89dc828-03da-4bf6-9b20-e655fa9c0a0d",
+		"name": "ApiGo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ApiGo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "password",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEZWxwaGkgTVZDIEZyYW1ld29yayBKV1QgTWlkZGxld2FyZSBTYW1wbGUiLCJleHAiOjE2MzU0NDI0NzYsIm5iZiI6MTYzNTQzODU3NiwiaWF0IjoxNjM1NDM4ODc2LCJjdXN0b21rZXkyIjoiY3VzdG9tdmFsdWUyIiwicm9sZXMiOiJyb2xlMSIsImN1c3RvbWtleTEiOiJjdXN0b212YWx1ZTEiLCJ1c2VybmFtZSI6InVzZXIxIiwibXljdXN0b212YWx1ZSI6ImhlbGxvIHRoZXJlIn0.5yiLj9F0AoBekPXsYEaxiw1nYGj1Ie3HIYYwD1_QeBssyqOCAsXNV8v5puNCbUcjpq_D-tJ72pyvVPREIk4Bxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8090/apigo/familias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"apigo",
+						"familias"
+					]
+				},
+				"description": "ApiGo"
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGo POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEZWxwaGkgTVZDIEZyYW1ld29yayBKV1QgTWlkZGxld2FyZSBTYW1wbGUiLCJleHAiOjE2MzU0MDI0MTYsIm5iZiI6MTYzNTM5ODUxNiwiaWF0IjoxNjM1Mzk4ODE2LCJjdXN0b21rZXkyIjoiY3VzdG9tdmFsdWUyIiwicm9sZXMiOiJyb2xlMSIsImN1c3RvbWtleTEiOiJjdXN0b212YWx1ZTEiLCJ1c2VybmFtZSI6InVzZXIxIiwibXljdXN0b212YWx1ZSI6ImhlbGxvIHRoZXJlIn0.tJS3JnKFWQgjKZZeJVa3KVOMmvVNYobKzZRruQH4uhzgYxM99H4CSwKLFTSl1wIYLKxChSHRQVNctdRJ6xqkQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"descripcion\": \"Computo\",\r\n        \"visible\": 0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/apigo/familias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"apigo",
+						"familias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGo PUT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEZWxwaGkgTVZDIEZyYW1ld29yayBKV1QgTWlkZGxld2FyZSBTYW1wbGUiLCJleHAiOjE2MzU0MDI0MTYsIm5iZiI6MTYzNTM5ODUxNiwiaWF0IjoxNjM1Mzk4ODE2LCJjdXN0b21rZXkyIjoiY3VzdG9tdmFsdWUyIiwicm9sZXMiOiJyb2xlMSIsImN1c3RvbWtleTEiOiJjdXN0b212YWx1ZTEiLCJ1c2VybmFtZSI6InVzZXIxIiwibXljdXN0b212YWx1ZSI6ImhlbGxvIHRoZXJlIn0.tJS3JnKFWQgjKZZeJVa3KVOMmvVNYobKzZRruQH4uhzgYxM99H4CSwKLFTSl1wIYLKxChSHRQVNctdRJ6xqkQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"descripcion\":\"Familia demo 111111111111111111111111111\", \"visible\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8090/apigo/familias/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"apigo",
+						"familias",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGo DELETE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "password",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEZWxwaGkgTVZDIEZyYW1ld29yayBKV1QgTWlkZGxld2FyZSBTYW1wbGUiLCJleHAiOjE2MzU0MDI0MTYsIm5iZiI6MTYzNTM5ODUxNiwiaWF0IjoxNjM1Mzk4ODE2LCJjdXN0b21rZXkyIjoiY3VzdG9tdmFsdWUyIiwicm9sZXMiOiJyb2xlMSIsImN1c3RvbWtleTEiOiJjdXN0b212YWx1ZTEiLCJ1c2VybmFtZSI6InVzZXIxIiwibXljdXN0b212YWx1ZSI6ImhlbGxvIHRoZXJlIn0.tJS3JnKFWQgjKZZeJVa3KVOMmvVNYobKzZRruQH4uhzgYxM99H4CSwKLFTSl1wIYLKxChSHRQVNctdRJ6xqkQA",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEZWxwaGkgTVZDIEZyYW1ld29yayBKV1QgTWlkZGxld2FyZSBTYW1wbGUiLCJleHAiOjE2MzU0MDI0MTYsIm5iZiI6MTYzNTM5ODUxNiwiaWF0IjoxNjM1Mzk4ODE2LCJjdXN0b21rZXkyIjoiY3VzdG9tdmFsdWUyIiwicm9sZXMiOiJyb2xlMSIsImN1c3RvbWtleTEiOiJjdXN0b212YWx1ZTEiLCJ1c2VybmFtZSI6InVzZXIxIiwibXljdXN0b212YWx1ZSI6ImhlbGxvIHRoZXJlIn0.tJS3JnKFWQgjKZZeJVa3KVOMmvVNYobKzZRruQH4uhzgYxM99H4CSwKLFTSl1wIYLKxChSHRQVNctdRJ6xqkQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/apigo/familias/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"apigo",
+						"familias",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGo Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8090/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

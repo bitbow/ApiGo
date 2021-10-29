@@ -2,116 +2,66 @@ program ApiGo;
 
 {$APPTYPE CONSOLE}
 
+
 uses
   System.SysUtils,
-  MVCFramework.Logger,
-  MVCFramework.Commons,
-  MVCFramework.REPLCommandsHandlerU,
-  Web.ReqMulti,
+  Winapi.Windows,
+  Winapi.ShellAPI,
   Web.WebReq,
   Web.WebBroker,
-  IdContext,
   IdHTTPWebBrokerBridge,
-  UMVCcontroller in 'UMVCcontroller.pas',
+  MVCFramework.Commons,
+  IdContext,
   UwmMain in 'UwmMain.pas' {wmMain: TWebModule},
-  UdmMain in 'UdmMain.pas' {dmConexion: TDataModule},
-  UGlobal in 'UGlobal.pas',
-  UUtils in 'Lib\UUtils.pas';
+  UMVCcontroller in 'UMVCcontroller.pas',
+  AuthenticationU in 'AuthenticationU.pas',
+  UUtils in 'Lib\UUtils.pas',
+  UGlobal in 'UGlobal.pas';
 
 {$R *.res}
 
+type
+  TWebBrokerBridgeAuthEvent = class
+  public
+    class procedure ServerParserAuthentication(AContext: TIdContext; const AAuthType, AAuthData: String; var VUsername,
+    VPassword: String; var VHandled: Boolean);
+  end;
 
 procedure RunServer(APort: Integer);
 var
   LServer: TIdHTTPWebBrokerBridge;
-  LCustomHandler: TMVCCustomREPLCommandsHandler;
-  LCmd: string;
 begin
-  Writeln('** DMVCFramework Server ** build ' + DMVCFRAMEWORK_VERSION);
-  LCmd := 'start';
-  if ParamCount >= 1 then
-    LCmd := ParamStr(1);
-
-  LCustomHandler := function(const Value: String; const Server: TIdHTTPWebBrokerBridge; out Handled: Boolean): THandleCommandResult
-    begin
-      Handled := False;
-      Result := THandleCommandResult.Unknown;
-
-      // Write here your custom command for the REPL using the following form...
-      // ***
-      // Handled := False;
-      // if (Value = 'apiversion') then
-      // begin
-      // REPLEmit('Print my API version number');
-      // Result := THandleCommandResult.Continue;
-      // Handled := True;
-      // end
-      // else if (Value = 'datetime') then
-      // begin
-      // REPLEmit(DateTimeToStr(Now));
-      // Result := THandleCommandResult.Continue;
-      // Handled := True;
-      // end;
-    end;
-
+  Writeln(Format('Starting HTTP Server or port %d', [APort]));
   LServer := TIdHTTPWebBrokerBridge.Create(nil);
   try
-    LServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
+    LServer.OnParseAuthentication :=  TMVCParseAuthentication.OnParseAuthentication;
     LServer.DefaultPort := APort;
-    LServer.KeepAlive := True;
-
-    { more info about MaxConnections
-      http://ww2.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=index.html }
-    LServer.MaxConnections := 0;
-
-    { more info about ListenQueue
-      http://ww2.indyproject.org/docsite/html/frames.html?frmname=topic&frmfile=index.html }
-    LServer.ListenQueue := 200;
-    {required if you use JWT middleware }
-    LServer.OnParseAuthentication := TMVCParseAuthentication.OnParseAuthentication;
-
-    WriteLn('Write "quit" or "exit" to shutdown the server');
-    repeat
-      if LCmd.IsEmpty then
-      begin
-        Write('-> ');
-        ReadLn(LCmd)
-      end;
-      try
-        case HandleCommand(LCmd.ToLower, LServer, LCustomHandler) of
-          THandleCommandResult.Continue:
-            begin
-              Continue;
-            end;
-          THandleCommandResult.Break:
-            begin
-              Break;
-            end;
-          THandleCommandResult.Unknown:
-            begin
-              REPLEmit('Unknown command: ' + LCmd);
-            end;
-        end;
-      finally
-        LCmd := '';
-      end;
-    until False;
-
+    LServer.Active := True;
+    Writeln('Press RETURN to stop the server');
+    // ShellExecute(0, 'open', PChar('http://localhost:' + IntToStr(APort)), nil, nil, SW_SHOW);
+    ReadLn;
   finally
     LServer.Free;
   end;
 end;
 
+{ TWebBrokerBridgeAuthEvent }
+
+class procedure TWebBrokerBridgeAuthEvent.ServerParserAuthentication(AContext: TIdContext; const AAuthType, AAuthData: String;
+  var VUsername, VPassword: String; var VHandled: Boolean);
+begin
+  if SameText(AAuthType, 'bearer') then
+    VHandled := True;
+end;
+
 begin
   ReportMemoryLeaksOnShutdown := True;
-  IsMultiThread := True;
   try
     if WebRequestHandler <> nil then
       WebRequestHandler.WebModuleClass := WebModuleClass;
-
     WebRequestHandlerProc.MaxConnections := 1024;
 
-    dmConexion := TdmConexion.Create(nil);
+    // dmConexion := TdmConexion.Create(nil);
 
     gServerPort := StrToIntDef(rIni('Configuration','ServerPort'),8080);
 
@@ -119,5 +69,6 @@ begin
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
-  end;
+  end
+
 end.
