@@ -16,3 +16,4 @@ Apigo implement the following _endpoints_:
 | PUT    | /apigo/dinamicresource/:id 	| Updates the item with the specified `id` using data from the `request body`. 	|
 
 
+bitbow
